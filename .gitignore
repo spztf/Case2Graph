@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
+nohup.out
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Large intermediate files (generate from source)
+data/enterprise_subgraphs/
+data/raw/
+
+# Old model checkpoints
+*.pt
+!final_models/*.pt
+
+# Extracted archives (keep .tar.gz only)
+data/case_graphs/
+

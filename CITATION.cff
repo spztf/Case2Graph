@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software or data in your research, please cite the accompanying paper."
+title: "From Case to Graph: Graph Contrastive Learning for Case-Driven Tax Evasion Pattern Retrieval"
+authors:
+  - family-names: "Li"
+    given-names: "First Author"
+  - family-names: "Author"
+    given-names: "Second"
+  - family-names: "Author"
+    given-names: "Third"
+year: 2026
+conference: "IEEE International Conference on Social Computing (ICSC)"
+notes: "Under review"
+repository-code: "https://github.com/spztf/Case2Graph"
+url: "https://github.com/spztf/Case2Graph"
+license: MIT
+keywords:
+  - graph neural network
+  - contrastive learning
+  - tax evasion detection
+  - case-based retrieval
+  - knowledge graph
+  - social computing

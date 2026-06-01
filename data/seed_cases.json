@@ -1,0 +1,252 @@
+[
+  {
+    "case_id": "CASE_004",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_004.json"
+  },
+  {
+    "case_id": "CASE_2372",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_2372.json"
+  },
+  {
+    "case_id": "CASE_4517",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_4517.json"
+  },
+  {
+    "case_id": "CASE_5369",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_5369.json"
+  },
+  {
+    "case_id": "CASE_2142",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_2142.json"
+  },
+  {
+    "case_id": "CASE_1735",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_1735.json"
+  },
+  {
+    "case_id": "CASE_3039",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_3039.json"
+  },
+  {
+    "case_id": "CASE_4818",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_4818.json"
+  },
+  {
+    "case_id": "CASE_4808",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_4808.json"
+  },
+  {
+    "case_id": "CASE_1741",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_1741.json"
+  },
+  {
+    "case_id": "CASE_2083",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_2083.json"
+  },
+  {
+    "case_id": "CASE_1248",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_1248.json"
+  },
+  {
+    "case_id": "CASE_1889",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_1889.json"
+  },
+  {
+    "case_id": "CASE_1260",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_1260.json"
+  },
+  {
+    "case_id": "CASE_4873",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_4873.json"
+  },
+  {
+    "case_id": "CASE_4966",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_4966.json"
+  },
+  {
+    "case_id": "CASE_3778",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_3778.json"
+  },
+  {
+    "case_id": "CASE_4144",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_4144.json"
+  },
+  {
+    "case_id": "CASE_0794",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_0794.json"
+  },
+  {
+    "case_id": "CASE_5281",
+    "case_type": "虚开增值税专用发票",
+    "file": "case_5281.json"
+  },
+  {
+    "case_id": "CASE_X6775",
+    "case_type": "隐匿收入",
+    "file": "case_x6775.json"
+  },
+  {
+    "case_id": "CASE_3799",
+    "case_type": "隐匿收入",
+    "file": "case_3799.json"
+  },
+  {
+    "case_id": "CASE_5191",
+    "case_type": "隐匿收入",
+    "file": "case_5191.json"
+  },
+  {
+    "case_id": "CASE_X8090",
+    "case_type": "隐匿收入",
+    "file": "case_x8090.json"
+  },
+  {
+    "case_id": "CASE_4609",
+    "case_type": "隐匿收入",
+    "file": "case_4609.json"
+  },
+  {
+    "case_id": "CASE_0470",
+    "case_type": "隐匿收入",
+    "file": "case_0470.json"
+  },
+  {
+    "case_id": "CASE_0311",
+    "case_type": "隐匿收入",
+    "file": "case_0311.json"
+  },
+  {
+    "case_id": "CASE_4782",
+    "case_type": "隐匿收入",
+    "file": "case_4782.json"
+  },
+  {
+    "case_id": "CASE_0196",
+    "case_type": "隐匿收入",
+    "file": "case_0196.json"
+  },
+  {
+    "case_id": "CASE_5238",
+    "case_type": "隐匿收入",
+    "file": "case_5238.json"
+  },
+  {
+    "case_id": "CASE_3593",
+    "case_type": "隐匿收入",
+    "file": "case_3593.json"
+  },
+  {
+    "case_id": "CASE_X8195",
+    "case_type": "隐匿收入",
+    "file": "case_x8195.json"
+  },
+  {
+    "case_id": "CASE_4769",
+    "case_type": "隐匿收入",
+    "file": "case_4769.json"
+  },
+  {
+    "case_id": "CASE_3498",
+    "case_type": "隐匿收入",
+    "file": "case_3498.json"
+  },
+  {
+    "case_id": "CASE_X8190",
+    "case_type": "隐匿收入",
+    "file": "case_x8190.json"
+  },
+  {
+    "case_id": "CASE_4768",
+    "case_type": "隐匿收入",
+    "file": "case_4768.json"
+  },
+  {
+    "case_id": "CASE_2624",
+    "case_type": "隐匿收入",
+    "file": "case_2624.json"
+  },
+  {
+    "case_id": "CASE_X8114",
+    "case_type": "隐匿收入",
+    "file": "case_x8114.json"
+  },
+  {
+    "case_id": "CASE_2650",
+    "case_type": "隐匿收入",
+    "file": "case_2650.json"
+  },
+  {
+    "case_id": "CASE_3730",
+    "case_type": "隐匿收入",
+    "file": "case_3730.json"
+  },
+  {
+    "case_id": "CASE_024",
+    "case_type": "转让定价",
+    "file": "case_024.json"
+  },
+  {
+    "case_id": "CASE_020",
+    "case_type": "转让定价",
+    "file": "case_020.json"
+  },
+  {
+    "case_id": "CASE_030",
+    "case_type": "转让定价",
+    "file": "case_030.json"
+  },
+  {
+    "case_id": "CASE_011",
+    "case_type": "转让定价",
+    "file": "case_011.json"
+  },
+  {
+    "case_id": "CASE_047",
+    "case_type": "转让定价",
+    "file": "case_047.json"
+  },
+  {
+    "case_id": "CASE_016",
+    "case_type": "转让定价",
+    "file": "case_016.json"
+  },
+  {
+    "case_id": "CASE_050",
+    "case_type": "转让定价",
+    "file": "case_050.json"
+  },
+  {
+    "case_id": "CASE_053",
+    "case_type": "转让定价",
+    "file": "case_053.json"
+  },
+  {
+    "case_id": "CASE_015",
+    "case_type": "转让定价",
+    "file": "case_015.json"
+  },
+  {
+    "case_id": "CASE_026",
+    "case_type": "转让定价",
+    "file": "case_026.json"
+  }
+]

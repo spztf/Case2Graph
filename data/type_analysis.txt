@@ -1,0 +1,57 @@
+=== ALL Case Types ===
+[虚开增值税专用发票] count=2830
+[虚开发票] count=1449
+[隐匿收入] count=1160
+[骗取出口退税] count=1157
+[其他] count=968
+[转让定价] count=24
+
+=== Per-type detail ===
+
+[虚开增值税专用发票]
+  case_id: CASE_001
+  causal_chain pattern: 票货分离
+  causal_chain case_type: 虚开增值税专用发票
+  metrics tax_evaded: 2161352.64
+  metrics node_count: 8
+  node types: {'Company': 1, 'Person': 1, 'Authority': 1, 'ViolationEvent': 1, 'FinancialFlow': 2, 'Location': 1, 'Industry': 1}
+
+[虚开发票]
+  case_id: CASE_0060
+  causal_chain pattern: 无真实交易开票
+  causal_chain case_type: 虚开发票
+  metrics tax_evaded: 3.9
+  metrics node_count: 7
+  node types: {'Company': 1, 'Authority': 1, 'ViolationEvent': 1, 'FinancialFlow': 2, 'Location': 1, 'Industry': 1}
+
+[其他]
+  case_id: CASE_0064
+  causal_chain pattern: 通用违法
+  causal_chain case_type: 其他
+  metrics tax_evaded: 263.63
+  metrics node_count: 7
+  node types: {'Company': 1, 'Authority': 1, 'ViolationEvent': 1, 'FinancialFlow': 2, 'Location': 1, 'Industry': 1}
+
+[隐匿收入]
+  case_id: CASE_007
+  causal_chain pattern: 私户收款
+  causal_chain case_type: 隐匿收入
+  metrics tax_evaded: 659952.85
+  metrics node_count: 6
+  node types: {'Company': 1, 'Person': 1, 'Authority': 1, 'ViolationEvent': 1, 'FinancialFlow': 2}
+
+[转让定价]
+  case_id: CASE_011
+  causal_chain pattern: 高进低出
+  causal_chain case_type: 转让定价
+  metrics tax_evaded: 4286387.62
+  metrics node_count: 8
+  node types: {'Company': 2, 'Authority': 1, 'ViolationEvent': 1, 'FinancialFlow': 2, 'Location': 1, 'Industry': 1}
+
+[骗取出口退税]
+  case_id: CASE_0113
+  causal_chain pattern: 假报出口
+  causal_chain case_type: 骗取出口退税
+  metrics tax_evaded: 790694.0
+  metrics node_count: 7
+  node types: {'Company': 1, 'Authority': 1, 'ViolationEvent': 1, 'FinancialFlow': 2, 'Location': 1, 'Industry': 1}
