@@ -6,7 +6,7 @@
 
 Official implementation of the paper submitted to **IEEE ICSC 2026**.
 
-> **Abstract:** Given a confirmed tax evasion case, can we automatically find other enterprises employing the *same modus operandi*? We cast case-driven pattern retrieval as a graph contrastive learning problem. Each case is represented as a heterogeneous subgraph of the enterprise knowledge graph; a GIN-based encoder with edge-type-aware message passing maps these subgraphs into a shared embedding space where cases with identical topology-based evasion patterns cluster together. Trained with a hybrid InfoNCE + cross-entropy objective on 7,588 real-world Chinese tax cases, Pure GNN (CE-only) achieves MRR@5=0.9783, P@5=0.9722, Hit@10=0.9901 on a held-out test set—a **+65.7% relative gain** over BM25 text retrieval (MRR@5=0.5905). Our joint contrastive model further attains MRR@5=0.9504 (±0.0577 over 3 seeds) and scales to full-database retrieval over 7,594 enterprises at P@5=0.7938.
+> **Abstract:** Given a confirmed tax evasion case, can we automatically find other enterprises employing the *same modus operandi*? We cast case-driven pattern retrieval as a graph contrastive learning problem. Each case is represented as a heterogeneous subgraph of the enterprise knowledge graph; a GIN-based encoder with edge-type-aware message passing maps these subgraphs into a shared embedding space where cases with identical topology-based evasion patterns cluster together. Trained with a hybrid InfoNCE + cross-entropy objective on 7,588 real-world Chinese tax cases, Pure GNN (CE-only) achieves MRR@5=0.9783, P@5=0.9722, Hit@10=0.9901 on a held-out test set—a **+65.7% relative gain** over BM25 text retrieval (MRR@5=0.5905). Our joint contrastive model further attains MRR@5=0.9492 (±0.0591 over 3 seeds) and scales to full-database retrieval over 7,594 enterprises at P@5=0.7938.
 
 ---
 
@@ -116,7 +116,7 @@ python src/master_experiments.py --exp full_eval --gpu 0
 | **BM25 (TF-IDF)** | 0.5905 | 0.6001 | 0.4768 | 0.4640 | 0.7704 |
 | Random Embedding | 0.4106 | 0.4235 | 0.3365 | 0.3346 | 0.6075 |
 | **Pure GNN (CE only)** | **0.9783** | 0.9785 | **0.9722** | 0.9462 | **0.9901** |
-| Joint ×3 (mean±σ) | 0.9504±0.058 | 0.9504±0.058 | 0.9166±0.057 | 0.9178±0.054 | 0.9835±0.016 |
+| Joint ×3 (mean±σ) | 0.9492±0.059 | 0.9504±0.058 | 0.9166±0.057 | 0.9178±0.054 | 0.9835±0.016 |
 
 ### Lambda Sweep (CE weight λ)
 
@@ -239,10 +239,12 @@ All experiments use fixed random seeds. Key hyperparameters:
 If you use this code or data in your research, please cite:
 
 ```bibtex
-@inproceedings{li2026casegraph,
+@inproceedings{xu2026casegraph,
   title     = {From Case to Graph: Graph Contrastive Learning for 
                Case-Driven Tax Evasion Pattern Retrieval},
-  author    = {Li, {First Author} and {Second Author} and {Third Author}},
+  author    = {Xu, Yingxiao and Zheng, Anbing and Yao, Jian and 
+               Xiong, Yun and Zheng, Qiaofei and Wu, Yifan and 
+               Zhou, Yuchen and Niu, Junyu},
   booktitle = {Proceedings of the IEEE International Conference on 
                Social Computing (ICSC)},
   year      = {2026},
