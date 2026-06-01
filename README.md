@@ -4,7 +4,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![PyTorch 2.0+](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
 
-Official implementation of the paper submitted to **IEEE ICSC 2026**.
+Official implementation of the paper submitted to **ICSC 2026（社会计算国际会议）**.
 
 > **Abstract:** Given a confirmed tax evasion case, can we automatically find other enterprises employing the *same modus operandi*? We cast case-driven pattern retrieval as a graph contrastive learning problem. Each case is represented as a heterogeneous subgraph of the enterprise knowledge graph; a GIN-based encoder with edge-type-aware message passing maps these subgraphs into a shared embedding space where cases with identical topology-based evasion patterns cluster together. Trained with a hybrid InfoNCE + cross-entropy objective on 7,588 real-world Chinese tax cases, Pure GNN (CE-only) achieves MRR@5=0.9783, P@5=0.9722, Hit@10=0.9901 on a held-out test set—a **+65.7% relative gain** over BM25 text retrieval (MRR@5=0.5905). Our joint contrastive model further attains MRR@5=0.9492 (±0.0591 over 3 seeds) and scales to full-database retrieval over 7,594 enterprises at P@5=0.7938.
 
@@ -245,8 +245,8 @@ If you use this code or data in your research, please cite:
   author    = {Xu, Yingxiao and Zheng, Anbing and Yao, Jian and 
                Xiong, Yun and Zheng, Qiaofei and Wu, Yifan and 
                Zhou, Yuchen and Niu, Junyu},
-  booktitle = {Proceedings of the IEEE International Conference on 
-               Social Computing (ICSC)},
+  booktitle = {Proceedings of the International Conference on 
+               Social Computing (ICSC 2026)},
   year      = {2026},
   note      = {Under review}
 }
@@ -267,4 +267,3 @@ The underlying tax case data is anonymized and used under a data-sharing agreeme
 ## 🤝 Contact
 
 For questions about the paper, code, or data, please open a GitHub issue or contact the corresponding author.
-
