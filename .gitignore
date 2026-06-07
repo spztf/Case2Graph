@@ -5,33 +5,30 @@ __pycache__/
 *.egg-info/
 dist/
 build/
-.env
+
+# Virtual environments
+venv/
 .venv/
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Logs
-*.log
-logs/
-nohup.out
-
-# OS
-.DS_Store
-Thumbs.db
+env/
 
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# Large intermediate files (generate from source)
-data/enterprise_subgraphs/
-data/raw/
+# Jupyter
+.ipynb_checkpoints/
 
-# Old model checkpoints
-*.pt
-!final_models/*.pt
-
-# Extracted archives (keep .tar.gz only)
+# Data (extracted — keep archives only)
 data/case_graphs/
+data/enterprise_subgraphs/
 
+# Results (runtime — keep final_results/)
+results/
+output/
+final_results/expB_case_type_recovery.json
+
+# OS
+.DS_Store
+Thumbs.db

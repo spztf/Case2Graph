@@ -13,8 +13,8 @@ Thank you for your interest in contributing to this project!
 ## Development Setup
 
 ```bash
-git clone https://github.com/spztf/Case2Graph.git
-cd Case2Graph
+git clone <repo-url>
+cd tax-case-retrieval
 conda create -n tax-retrieval python=3.10 -y
 conda activate tax-retrieval
 pip install -r requirements.txt
