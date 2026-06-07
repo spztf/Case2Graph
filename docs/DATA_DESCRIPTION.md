@@ -46,18 +46,6 @@ The full enterprise knowledge graph in a single JSON file.
 ### `data/case_graphs.tar.gz` (2.8 MB compressed, ~53 MB extracted)
 7,588 individual case subgraph files, each stored as `case_graphs/case_XXXX.json`.
 
-Each file contains the k-hop ego-subgraph (k=3) around a ViolationEvent node:
-
-```json
-{
-  "case_id": "case_0001",
-  "case_type": "虚开增值税专用发票",
-  "nodes": { ... },
-  "edges": [ ... ],
-  "node_features": { ... }
-}
-```
-
 ### `data/seed_cases.json` (5.4 KB)
 Metadata for 50 manually annotated seed cases used as the labeled training set.
 
@@ -189,7 +177,7 @@ Split metadata is stored in `final_results/split_meta_v9.json`.
 If you use this data, please cite the accompanying paper and acknowledge the data-sharing agreement:
 
 ```
-The tax case data used in this research was provided by [Provincial Tax Bureau] 
-under data-sharing agreement [ID]. All data has been anonymized and is used 
+The tax case data used in this research was provided by [Provincial Tax Bureau]
+under data-sharing agreement [ID]. All data has been anonymized and is used
 for academic research purposes only.
 ```

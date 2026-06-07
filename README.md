@@ -4,9 +4,9 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![PyTorch 2.0+](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
 
-Official implementation of the paper submitted to **ICSC 2026（社会计算国际会议）**.
+Official implementation of the paper submitted to **IEEE ICSC 2026**.
 
-> **Abstract:** Given a confirmed tax evasion case, can we automatically find other enterprises employing the *same modus operandi*? We cast case-driven pattern retrieval as a graph contrastive learning problem. Each case is represented as a heterogeneous subgraph of the enterprise knowledge graph; a GIN-based encoder with edge-type-aware message passing maps these subgraphs into a shared embedding space where cases with identical topology-based evasion patterns cluster together. Trained with a hybrid InfoNCE + cross-entropy objective on 7,588 real-world Chinese tax cases, Pure GNN (CE-only) achieves MRR@5=0.9783, P@5=0.9722, Hit@10=0.9901 on a held-out test set—a **+65.7% relative gain** over BM25 text retrieval (MRR@5=0.5905). Our joint contrastive model further attains MRR@5=0.9492 (±0.0591 over 3 seeds) and scales to full-database retrieval over 7,594 enterprises at P@5=0.7938.
+> **Abstract:** Given a confirmed tax evasion case, can we automatically find other enterprises employing the *same modus operandi*? We cast case-driven pattern retrieval as a graph contrastive learning problem. Each case is represented as a heterogeneous subgraph of the enterprise knowledge graph; a GIN-based encoder with edge-type-aware message passing maps these subgraphs into a shared embedding space where cases with identical topology-based evasion patterns cluster together. Trained with a hybrid InfoNCE + cross-entropy objective on 7,588 real-world Chinese tax cases, Pure GNN (CE-only) achieves MRR@5=0.9783, P@5=0.9722, Hit@10=0.9901 on a held-out test set—a **+65.7% relative gain** over BM25 text retrieval (MRR@5=0.5905). Our joint contrastive model further attains MRR@5=0.9504 (±0.0577 over 3 seeds) and scales to full-database retrieval over 7,594 enterprises at P@5=0.7938.
 
 ---
 
@@ -14,51 +14,55 @@ Official implementation of the paper submitted to **ICSC 2026（社会计算国�
 
 ```
 .
-├── README.md                     # This file
-├── LICENSE                       # MIT License
-├── requirements.txt              # Python dependencies
-├── CITATION.cff                  # Citation metadata
-├── paper/
-│   └── ICSC2026_Paper_v2.md      # Full paper (Markdown)
+├── README.md                          # This file
+├── LICENSE                            # MIT License
+├── requirements.txt                   # Python dependencies
+├── CITATION.cff                       # Citation metadata
+├── CONTRIBUTING.md                    # Contribution guidelines
+├── .gitignore
 ├── src/
-│   ├── master_experiments.py     # 🎯 Main orchestrator: all experiments
-│   ├── task_c_common_v2.py       # Shared data loading / model definitions
-│   ├── phase3_train_v12_joint.py # Joint training (CE + InfoNCE)
-│   ├── phase3_train_v13_balanced.py  # Balanced sampling variant
-│   ├── phase3_train_v14_pure_nce.py  # Pure InfoNCE variant
-│   ├── build_kg_v3.py            # Knowledge graph construction pipeline
-│   ├── retrieval_eval.py         # Standalone retrieval evaluation
-│   └── generate_dataset.py       # Dataset generation from raw data
+│   ├── master_experiments.py          # 🎯 Main orchestrator: all experiments
+│   ├── expB_case_type_recovery.py     # 🔬 Case type recovery (Exp B)
+│   ├── task_c_common_v2.py            # Shared data loading / model definitions
+│   ├── phase3_train_v12_joint.py      # Joint training (CE + InfoNCE)
+│   ├── phase3_train_v13_balanced.py   # Balanced sampling variant
+│   ├── phase3_train_v14_pure_nce.py   # Pure InfoNCE variant
+│   ├── build_kg_v3.py                 # Knowledge graph construction pipeline
+│   ├── retrieval_eval.py              # Standalone retrieval evaluation
+│   └── generate_dataset.py            # Dataset generation from raw data
 ├── data/
-│   ├── case_graphs.tar.gz        # 7,588 case subgraphs (compressed)
-│   ├── enterprise_graph.json     # Full enterprise knowledge graph
-│   ├── seed_cases.json           # Annotated seed cases
-│   ├── seed_cases_full.json      # Full seed case metadata
-│   ├── node_vocabs.json          # Node attribute vocabularies
-│   └── type_analysis.txt         # Case type distribution
+│   ├── case_graphs.tar.gz             # 7,588 case subgraphs (compressed)
+│   ├── enterprise_graph.json          # Full enterprise knowledge graph
+│   ├── seed_cases.json                # Annotated seed cases
+│   ├── seed_cases_full.json           # Full seed case metadata
+│   ├── node_vocabs.json               # Node attribute vocabularies
+│   ├── type_analysis.txt              # Case type distribution
+│   └── data_kg_readme.md              # KG building statistics
 ├── final_results/
-│   ├── bm25_baseline.json        # BM25 text retrieval baseline
-│   ├── random_baseline.json      # Random embedding baseline
-│   ├── pure_gnn_baseline.json    # CE-only GNN baseline
-│   ├── lambda_sweep.json         # λ (CE weight) sweep
-│   ├── temperature_sweep.json    # τ (temperature) sweep
-│   ├── seed_stability.json       # Multi-seed variance
-│   ├── full_retrieval.json       # Full 7,594-enterprise retrieval
-│   ├── split_meta_v9.json        # Train/val/test split metadata
-│   └── embeddings_v13_balanced.npz  # 128-dim case embeddings
+│   ├── bm25_baseline.json             # BM25 text retrieval baseline
+│   ├── random_baseline.json           # Random embedding baseline
+│   ├── pure_gnn_baseline.json         # CE-only GNN baseline
+│   ├── lambda_sweep.json              # λ (CE weight) sweep
+│   ├── temperature_sweep.json         # τ (temperature) sweep
+│   ├── seed_stability.json            # Multi-seed variance
+│   ├── full_retrieval.json            # Full 7,594-enterprise retrieval
+│   ├── split_meta_v9.json             # Train/val/test split metadata
+│   ├── embeddings_v13_balanced.npz    # 128-dim case embeddings
+│   └── expB_case_type_recovery.json   # Case type recovery results (generated at runtime)
 ├── final_models/
-│   ├── master_lambda_0.0_best.pt  # λ=0 (InfoNCE-only) — MRR@5=1.0000
-│   ├── master_tau_0.3_best.pt     # τ=0.3 — MRR@5=0.9944
-│   ├── master_pure_gnn_best.pt    # CE-only GNN — MRR@5=0.9783
-│   └── master_full_eval_best.pt   # Full-retrieval model
+│   ├── master_lambda_0.0_best.pt      # λ=0 (InfoNCE-only)
+│   ├── master_tau_0.3_best.pt         # τ=0.3 optimal
+│   ├── master_pure_gnn_best.pt        # CE-only GNN
+│   └── master_full_eval_best.pt       # Full-retrieval model
 ├── figures/
-│   ├── system_architecture.svg    # System architecture diagram
-│   ├── case1_sequence.svg         # Case 1 event sequence
-│   ├── case2_sequence.svg         # Case 2 event sequence
-│   ├── case3_sequence.svg         # Case 3 event sequence
-│   └── embedding_tsne_combined.png # t-SNE visualization
+│   ├── system_architecture.svg        # System architecture diagram
+│   ├── case1_sequence.svg             # Case 1 event sequence
+│   ├── case2_sequence.svg             # Case 2 event sequence
+│   ├── case3_sequence.svg             # Case 3 event sequence
+│   └── embedding_tsne_combined.png    # t-SNE visualization
 └── docs/
-    └── DATA_DESCRIPTION.md        # Detailed data schema & provenance
+    ├── DATA_DESCRIPTION.md            # Detailed data schema & provenance
+    └── CHANGELOG.md                   # Version history
 ```
 
 ---
@@ -74,6 +78,9 @@ conda activate tax-retrieval
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Extract case graphs
+tar xzf data/case_graphs.tar.gz -C data/
 ```
 
 ### 2. Reproduce Main Results
@@ -107,6 +114,55 @@ python src/master_experiments.py --exp bm25 --gpu 0
 python src/master_experiments.py --exp full_eval --gpu 0
 ```
 
+### 4. Custom Data Paths
+
+All paths can be overridden via environment variables:
+
+```bash
+export CASE_GRAPHS_DIR=/path/to/case_graphs
+export ENTERPRISE_SUBGRAPHS_DIR=/path/to/enterprise_subgraphs
+export SPLIT_META_PATH=/path/to/split_meta_v9.json
+export VOCAB_PATH=/path/to/node_vocabs.json
+export MODEL_DIR=/path/to/models
+export MASTER_RESULTS_DIR=/path/to/results
+
+python src/master_experiments.py --exp baseline
+```
+
+---
+
+## 🔬 Experiment B: Case Type Recovery
+
+**Question:** If we *don't know* the case type for retrieval, can we predict it from text features and still achieve good ranking performance?
+
+We train a LogisticRegression classifier on scheme description text (TF-IDF char bigrams) + numeric features (amount, industry) to predict case_type. Then we use the *predicted* case_type in the GNN ranking model and compare against Oracle (ground-truth) and Zeroed (no case_type) settings.
+
+### Classification Performance
+| Model | Val Acc | Test Acc | Test F1 (macro) |
+|-------|---------|----------|-----------------|
+| LogisticRegression | 0.7869 | **0.7711** | **0.7528** |
+| LinearSVC | 0.7723 | — | — |
+| RandomForest | 0.7545 | — | — |
+| GradientBoosting | 0.7697 | — | — |
+
+### Ranking Recovery
+
+| Metric | Oracle | Predicted | Zeroed | Recovery % |
+|--------|--------|-----------|--------|------------|
+| **MRR@5** | 0.9783 | 0.9600 | 0.9030 | **+75.7%** |
+| **Precision@5** | 0.9722 | 0.9268 | 0.8207 | **+70.0%** |
+| **Hit@5** | 0.9888 | 0.9888 | 0.9367 | **+100.0%** |
+| **MRR@10** | 0.9785 | 0.9608 | 0.9057 | **+75.7%** |
+| **Precision@10** | 0.9462 | 0.9067 | 0.8148 | **+69.9%** |
+| **Hit@10** | 0.9901 | 0.9941 | 0.9571 | **+112.0%** |
+
+> **Key finding:** Even with only 77% classification accuracy, predicted case types recover **70–100%** of the performance gap between Oracle and Zeroed settings, demonstrating strong robustness.
+
+```bash
+# Run the case type recovery experiment
+python src/expB_case_type_recovery.py
+```
+
 ---
 
 ## 📊 Key Results
@@ -116,7 +172,7 @@ python src/master_experiments.py --exp full_eval --gpu 0
 | **BM25 (TF-IDF)** | 0.5905 | 0.6001 | 0.4768 | 0.4640 | 0.7704 |
 | Random Embedding | 0.4106 | 0.4235 | 0.3365 | 0.3346 | 0.6075 |
 | **Pure GNN (CE only)** | **0.9783** | 0.9785 | **0.9722** | 0.9462 | **0.9901** |
-| Joint ×3 (mean±σ) | 0.9492±0.059 | 0.9504±0.058 | 0.9166±0.057 | 0.9178±0.054 | 0.9835±0.016 |
+| Joint ×3 (mean±σ) | 0.9504±0.058 | 0.9504±0.058 | 0.9166±0.057 | 0.9178±0.054 | 0.9835±0.016 |
 
 ### Lambda Sweep (CE weight λ)
 
@@ -169,7 +225,7 @@ Projection Head ──────── MLP(128→64→128)
   │
   ▼
 Dual Objective:
-  ├── L_CE: Cross-entropy over 6 case types
+  ├── L_CE: Cross-entropy over 9 sub-types
   └── L_NCE: InfoNCE with in-batch negatives
        L = λ·L_CE + (1-λ)·L_NCE
 ```
@@ -225,9 +281,9 @@ All experiments use fixed random seeds. Key hyperparameters:
 |-----------|-------|
 | Embedding dimension | 128 |
 | GNN layers | 3 (GINConv) |
-| Optimizer | AdamW (lr=1e-4, wd=1e-5) |
-| Batch size | 64 |
-| Training epochs | 50 (early stop patience=10) |
+| Optimizer | Adam (lr=1e-3, wd=1e-4) |
+| Batch size | 128 |
+| Training epochs | 350 (early stop patience=80) |
 | Temperature τ | 0.3 (optimal) |
 | CE weight λ | 0.0 (InfoNCE-only, optimal) |
 | GPU | NVIDIA A100 80GB |
@@ -239,14 +295,12 @@ All experiments use fixed random seeds. Key hyperparameters:
 If you use this code or data in your research, please cite:
 
 ```bibtex
-@inproceedings{xu2026casegraph,
-  title     = {From Case to Graph: Graph Contrastive Learning for 
+@inproceedings{li2026casegraph,
+  title     = {From Case to Graph: Graph Contrastive Learning for
                Case-Driven Tax Evasion Pattern Retrieval},
-  author    = {Xu, Yingxiao and Zheng, Anbing and Yao, Jian and 
-               Xiong, Yun and Zheng, Qiaofei and Wu, Yifan and 
-               Zhou, Yuchen and Niu, Junyu},
-  booktitle = {Proceedings of the International Conference on 
-               Social Computing (ICSC 2026)},
+  author    = {Li, {First Author} and {Second Author} and {Third Author}},
+  booktitle = {Proceedings of the IEEE International Conference on
+               Social Computing (ICSC)},
   year      = {2026},
   note      = {Under review}
 }

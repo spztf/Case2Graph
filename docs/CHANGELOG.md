@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.1 (2026-06-07) — Case Type Recovery Experiment
+
+### New Features
+- **Exp B: Case Type Recovery** — classifier-based case_type prediction for retrieval robustness
+- LogisticRegression achieves 77.1% test accuracy on 6-way case_type classification
+- With predicted case_types, MRR@5 recovers 75.7% of the Oracle–Zeroed gap (0.9600 vs expected)
+- New file: `src/expB_case_type_recovery.py`
+- New results: `final_results/expB_case_type_recovery.json`
+
+### Infrastructure
+- All paths now use environment variables with sensible defaults (ready for GitHub public release)
+- Added `.gitignore` for model checkpoints and large data files
+
 ## v2.0 (2026-05-31) — Real Data Release
 
 ### Major Changes (from v1 draft)
